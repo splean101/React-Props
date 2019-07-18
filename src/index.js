@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from "prop-types";
+
 
 let arr = [['One', "Two"], ["Three", 'Four']];
 
@@ -19,5 +21,9 @@ const Table = (props) => {
         </table>
     )
 };
-Table.defaultProps = {data: [[1.1, 1.2], [2.1, 2.2]]}
-ReactDOM.render(<Table /*data = {arr}*//>, document.getElementById('div1'))
+
+Table.defaultProps = {data: [[1.1, 1.2], [2.1, 2.2]]};
+
+Table.propTypes = {data: PropTypes.array};
+
+ReactDOM.render(<Table data = {arr}/>, document.getElementById('div1'));
